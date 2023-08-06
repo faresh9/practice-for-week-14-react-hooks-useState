@@ -9,21 +9,27 @@ const UseState = () => {
       <h1>UseState Component</h1>
       <button
         onClick={() => {
-          setTheme("dark");
+          setTheme((prevTheme) => (prevTheme === "dark" ? "light" : "dark"));
         }}
       >
-        Dark
+        Toggle Theme
+      </button>
+
+      <h2>{count}</h2>
+      <button
+        onClick={() => {
+          setCount((prevCount) => prevCount + 1);
+        }}
+      >
+        Increment
       </button>
       <button
         onClick={() => {
-          setTheme("light");
+          setCount((prevCount) => prevCount - 1);
         }}
       >
-        Light
+        Decrement
       </button>
-      <h2>DISPLAY COUNT HERE</h2>
-      <button>Increment</button>
-      <button>Decrement</button>
     </div>
   );
 };
